@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jogo da forca</title>
+    <link rel="stylesheet" href="jogodaforca.css">
+</head>
+<body>
+    <div id="conteiner">
+        <h1>Jogo da Forca</h1>
+        <label>Digite uma letra:</label><input type="text" maxlength="1" name="verificarletra" id="verificarletra"> <button id="bnt_letra" onclick="verificarletra()" disabled>Verificar letra</button> <br>
+        <label>Digite uma palavra:</label><input type="text" name="verificarpalavra" id="verificarpalavra"> <button id="bnt_palavra" onclick="verificarpalavra()" disabled>Verificar palavra</button>
+        <h2>Dicas:</h2>
+        <div id="dicas">
+            <div id="dica_1"></div>
+            <div id="dica_2"></div>
+        </div>        
+        <button id="selecionarpalavra" onclick="selecionarpalavra()">Seleciona palavra</button>
+        <button id="reiniciar" onclick="reiniciar()" disabled>Reiniciar</button>
+        <div id="palavraforca"> 
+            
+        </div>
+        <div id="letra"></div>
+        <div id="chances">Chance restante: 6</div>
+       
+    </div>
+    <script src="jogodaforca.js"></script>
+</body>
+</html>
