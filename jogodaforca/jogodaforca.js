@@ -146,3 +146,12 @@ function verificarpalavra(){
     verificarpalavra.value = ''    
 }
 
+function reiniciar(){
+    var selecionarpalavra = document.getElementById('selecionarpalavra').disabled = false
+    document.getElementById('reiniciar').disabled = true
+    dica1.innerHTML = ""
+    dica2.innerHTML = ""
+    palavraforca.innerHTML = ""
+    chances.innerHTML = 'Chance restante: 6'
+
+}
