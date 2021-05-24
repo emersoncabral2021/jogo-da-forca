@@ -149,9 +149,12 @@ function verificarpalavra(){
 function reiniciar(){
     var selecionarpalavra = document.getElementById('selecionarpalavra').disabled = false
     document.getElementById('reiniciar').disabled = true
+    document.getElementById('verificarletra').disabled = false
+    document.getElementById('verificarpalavra').disabled = false
     dica1.innerHTML = ""
     dica2.innerHTML = ""
     palavraforca.innerHTML = ""
+    chance = 6
     chances.innerHTML = 'Chance restante: 6'
 
 }
