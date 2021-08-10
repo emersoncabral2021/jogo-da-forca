@@ -1,3 +1,5 @@
+
+
 var palavraSecreta = [
     {
         palavra: 'nissan',
@@ -47,7 +49,6 @@ var palavraSecreta = [
         pista_2: 'Criado na china'
         
     }
-    
 ]
 var dica1 = document.getElementById('dica_1')
 var dica2 = document.getElementById('dica_2')
@@ -60,8 +61,8 @@ var chance = 6
 
 function selecionarpalavra(){
     var selecionarpalavra = document.getElementById('selecionarpalavra').disabled = true
-    var bnt_letra = document.getElementById('bnt_letra').disabled = false
-    var bnt_palavra = document.getElementById('bnt_palavra').disabled = false
+var bnt_letra = document.getElementById('bnt_letra').disabled = false
+var bnt_palavra = document.getElementById('bnt_palavra').disabled = false
     dica1.innerHTML = '1.' + palavraSecreta[palavraAleatoria].pista_1
     dica2.innerHTML = '2.' + palavraSecreta[palavraAleatoria].pista_2
     for(var i = 0;i < palavraSecreta[palavraAleatoria].palavra.length;i++){
@@ -91,14 +92,7 @@ function verificarletra(){
             document.getElementById('verificarpalavra').disabled = true  
             document.getElementById('bnt_letra').disabled = true
             document.getElementById('bnt_palavra').disabled = true
-            document.getElementById('reiniciar').disabled = false
-            for(var i = 0;i < palavraSecreta[palavraAleatoria].palavra.length;i++){
-                palavraforca.innerHTML = "" 
-            }
-            for(var i = 0;i < palavraSecreta[palavraAleatoria].palavra.length;i++){
-                palavraforca.innerHTML += '<input  maxlength="1" type="text" value="' + palavraarray[i] + '" id=p' + [i] + '>' + '  ' 
-
-            }
+            document.getElementById('reiniciar').disabled = false    
         }
     } 
     if(letra != null){
@@ -127,24 +121,12 @@ function verificarpalavra(){
         alert('vc errou a palavra')
         if(chance == 0){
             alert('vc morreu')
-            document.getElementById('verificarletra').disabled = true
-            document.getElementById('verificarpalavra').disabled = true  
-            document.getElementById('bnt_letra').disabled = true
-            document.getElementById('bnt_palavra').disabled = true
-            document.getElementById('reiniciar').disabled = false
-            for(var i = 0;i < palavraSecreta[palavraAleatoria].palavra.length;i++){
-                palavraforca.innerHTML = "" 
-            }
-            for(var i = 0;i < palavraSecreta[palavraAleatoria].palavra.length;i++){
-                palavraforca.innerHTML += '<input  maxlength="1" type="text" value="' + palavraarray[i] + '" id=p' + [i] + '>' + '  ' 
-
-            }
-
     }
     }  
     chances.innerHTML = 'Chance restante: ' + chance
     verificarpalavra.value = ''    
 }
+
 
 function reiniciar(){
     var selecionarpalavra = document.getElementById('selecionarpalavra').disabled = false
