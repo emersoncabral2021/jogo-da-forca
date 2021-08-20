@@ -93,15 +93,21 @@ function verificarletra(){
             document.getElementById('bnt_letra').disabled = true
             document.getElementById('bnt_palavra').disabled = true
             document.getElementById('reiniciar').disabled = false    
+            palavraforca.innerHTML = ""
+            for(let i = 0;i < palavraSecreta[palavraAleatoria].palavra.length;i++){
+                palavraforca.innerHTML += '<input  maxlength="1" type="text" value="'+ palavraSecreta[palavraAleatoria].palavra[i] + '"id=p' + [i] + '>' + '  ' 
+    
+            }
         }
     } 
     if(letra != null){
         while(indiceletra != -1){
              if(indiceletra != -1){
                 indice.push(indiceletra)
+                console.log(palavraSecreta[palavraAleatoria].palavra[2])
                 indiceletra = palavraarray.indexOf(valorletra,indiceletra + 1)
                 document.getElementById('p'+ [indice]).value = letra
-                indice.pop(indiceletra) 
+               indice.pop(indiceletra) 
              }
                 
     }
@@ -116,11 +122,20 @@ function verificarpalavra(){
     var letra = palavraSecreta[palavraAleatoria].palavra.localeCompare(valorpalavra)
     if(letra == 0){
         alert('vc acertou a palavra')
+        palavraforca.innerHTML = ""
+        for(let i = 0;i < palavraSecreta[palavraAleatoria].palavra.length;i++){
+            palavraforca.innerHTML += '<input  maxlength="1" type="text" value="'+ palavraSecreta[palavraAleatoria].palavra[i] + '"id=p' + [i] + '>' + '  ' 
+
+        }
+        document.getElementById('reiniciar').disabled = false    
+
     }else{
         chance--
         alert('vc errou a palavra')
         if(chance == 0){
             alert('vc morreu')
+            document.getElementById('reiniciar').disabled = false    
+
     }
     }  
     chances.innerHTML = 'Chance restante: ' + chance
